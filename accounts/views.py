@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from accounts.forms import UserLoginForm
 
+
 def index(request):
     """Return the index.html file."""
     return render(request, "index.html")
