@@ -17,4 +17,4 @@ def logout(request):
 def login(request):
     """Return a login page"""
     login_form = UserLoginForm()
-    return render(request, "login.html")
+    return render(request, "login.html", {"login_form": login_form})
