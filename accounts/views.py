@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from accounts.forms import UserLoginForm
 
 
@@ -7,7 +8,7 @@ def index(request):
     """Return the index.html file."""
     return render(request, "index.html")
 
-
+@login_required
 def logout(request):
     """Log the user out."""
     auth.logout(request)
@@ -21,7 +22,6 @@ def login(request):
         return redirect(reverse("index"))
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
-
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])
