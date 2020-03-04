@@ -40,4 +40,4 @@ def login(request):
 
 def registration(request):
     """Render the registration page"""
-    return render(request, "register.html")
+    return render(request, "registration.html")
