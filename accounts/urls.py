@@ -1,4 +1,4 @@
-from django.urls.conf import url, include
+from django.conf.urls import url, include
 from accounts.views import index, logout, login, registration, user_profile
 from accounts import url_reset
 
